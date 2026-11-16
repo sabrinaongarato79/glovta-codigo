@@ -1,0 +1,38 @@
+{
+  "fecha": "2026-11-15T02:09:04.596Z",
+  "base": "https://glovta-evaluacion.vercel.app",
+  "checks": [
+    {
+      "path": "/portal.html",
+      "status": 200,
+      "type": "text/html; charset=utf-8"
+    },
+    {
+      "path": "/api/health",
+      "status": 200,
+      "type": "application/json; charset=utf-8",
+      "detail": "{\"status\":\"ok\",\"supabaseConfigured\":true}"
+    },
+    {
+      "path": "/api/profile",
+      "status": 401,
+      "type": "application/json; charset=utf-8"
+    },
+    {
+      "path": "/api/employer",
+      "status": 401,
+      "type": "application/json; charset=utf-8"
+    },
+    {
+      "path": "/.env",
+      "status": 404,
+      "type": "text/html; charset=utf-8"
+    },
+    {
+      "path": "/server/app.js",
+      "status": 404,
+      "type": "text/html; charset=utf-8"
+    }
+  ],
+  "limite": "Comprobacion HTTP sin sesiones; no acredita recorrido autenticado."
+}

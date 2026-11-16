@@ -1,0 +1,40 @@
+plugins {
+    id 'com.android.application' version '8.9.2'
+}
+def qaBuild = System.getenv('GLOVTA_ANDROID_QA') == 'true'
+def authUrl = System.getenv('SUPABASE_URL') ?: ''
+def authKey = System.getenv('SUPABASE_PUBLISHABLE_KEY') ?: ''
+if (qaBuild && (authUrl != 'https://yecgzorcxkokanuxgwki.supabase.co' || !authKey.startsWith('sb_publishable_'))) {
+    throw new GradleException('La APK QA requiere el proyecto de evaluacion y su clave publicable.')
+}
+if (authKey && !authKey.startsWith('sb_publishable_')) {
+    throw new GradleException('Android solo admite una clave publicable; no usar claves administrativas.')
+}
+android {
+    namespace 'com.glovta.app'
+    compileSdk 35
+    buildFeatures { buildConfig true }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    defaultConfig {
+        applicationId 'com.glovta.app'
+        minSdk 26
+        targetSdk 34
+        buildConfigField 'String', 'AUTH_URL', groovy.json.JsonOutput.toJson(authUrl)
+        buildConfigField 'String', 'AUTH_PUBLIC_KEY', groovy.json.JsonOutput.toJson(authKey)
+        resValue 'string', 'app_name', qaBuild ? 'Glovta Evaluación' : 'Glovta'
+        versionCode 1
+        versionName '0.1.0'
+    }
+    buildTypes {
+        debug {
+            if (qaBuild) {
+                applicationIdSuffix '.evaluacion'
+                versionNameSuffix '-qa'
+            }
+        }
+    }
+}
+

@@ -1,0 +1,37 @@
+Leé primero:
+1. ESTADO_REAL.md
+2. DESARROLLO_INSTRUCCIONES.md
+3. README.md
+
+Este es el frontend aprobado de GLOVTA.
+
+REGLAS:
+- No cambiar diseño, colores, tipografía ni copy sin aprobación.
+- No sustituir por templates.
+- No inventar clientes, métricas, tests o integraciones.
+- No hacer commits todavía.
+
+PRIMERA TAREA:
+1. Auditá todos los archivos sin modificar nada.
+2. Confirmá que existan:
+   index.html
+   styles.css
+   app.js
+   admin.html
+   sw.js
+   manifest.webmanifest
+   assets/
+3. Validá sintaxis de app.js y sw.js.
+4. Verificá que todos los IDs usados por app.js existan en index.html.
+5. Verificá que todos los recursos precacheados por sw.js existan físicamente.
+6. Ejecutá el proyecto en localhost si tu entorno lo permite.
+7. Separá el reporte en:
+   A. pruebas ejecutadas realmente;
+   B. resultados;
+   C. errores reales;
+   D. pruebas que necesitan navegador/manual.
+
+NO MODIFIQUES NADA TODAVÍA.
+
+Cuando esta auditoría esté cerrada, la siguiente etapa será:
+backend Express 5 + Supabase, manteniendo el frontend visual congelado.

@@ -1,0 +1,16 @@
+.class-build/
+node_modules/
+.env
+.env.*
+!.env.example
+.vercel/
+*.log
+/tmp/
+/output/
+.idea/
+*.jks
+*.keystore
+*.p12
+*.apk
+*.aab
+supabase/.temp/

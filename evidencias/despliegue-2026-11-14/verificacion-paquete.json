@@ -1,0 +1,94 @@
+{
+  "fecha": "2026-11-15T01:26:18.201Z",
+  "target": "C:\\Users\\LENOVO\\Documents\\ChatGPT\\Glovta\\output\\deploy\\glovta-evaluacion-1794705923541",
+  "proyecto": "yecgzorcxkokanuxgwki",
+  "checks": [
+    {
+      "caso": "evaluacion",
+      "ruta": "/portal.html",
+      "status": 200,
+      "estado": "APROBADO"
+    },
+    {
+      "caso": "evaluacion",
+      "ruta": "/portal.js",
+      "status": 200,
+      "estado": "APROBADO"
+    },
+    {
+      "caso": "evaluacion",
+      "ruta": "/portal.css",
+      "status": 200,
+      "estado": "APROBADO"
+    },
+    {
+      "caso": "evaluacion",
+      "ruta": "/",
+      "status": 200,
+      "estado": "APROBADO"
+    },
+    {
+      "caso": "evaluacion",
+      "ruta": "/api/health",
+      "status": 200,
+      "estado": "APROBADO"
+    },
+    {
+      "caso": "evaluacion",
+      "ruta": "/api/employer",
+      "status": 401,
+      "estado": "APROBADO"
+    },
+    {
+      "caso": "evaluacion",
+      "ruta": "/api/profile",
+      "status": 401,
+      "estado": "APROBADO"
+    },
+    {
+      "caso": "evaluacion",
+      "ruta": "/.env",
+      "status": 404,
+      "estado": "APROBADO"
+    },
+    {
+      "caso": "evaluacion",
+      "ruta": "/.env.qa",
+      "status": 404,
+      "estado": "APROBADO"
+    },
+    {
+      "caso": "evaluacion",
+      "ruta": "/server/app.js",
+      "status": 404,
+      "estado": "APROBADO"
+    },
+    {
+      "caso": "evaluacion",
+      "ruta": "/package.json",
+      "status": 404,
+      "estado": "APROBADO"
+    },
+    {
+      "caso": "evaluacion",
+      "ruta": "/api/no-existe",
+      "status": 404,
+      "estado": "APROBADO"
+    },
+    {
+      "caso": "rechaza-otro-proyecto",
+      "ruta": "/api/health",
+      "status": 503,
+      "estado": "APROBADO"
+    },
+    {
+      "caso": "rechaza-clave-no-publicable",
+      "ruta": "/api/health",
+      "status": 503,
+      "estado": "APROBADO"
+    }
+  ],
+  "publicado": false,
+  "limite": "Servidor HTTP local con paquete aislado. No acredita build remoto Vercel ni recorrido autenticado publico.",
+  "estado": "APROBADO"
+}

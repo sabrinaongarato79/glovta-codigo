@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Acceso · Glovta</title><link rel="stylesheet" href="portal.css"><script src="portal.js" type="module"></script></head>
+<body><a class="skip-link" href="#main">Saltar al contenido</a>
+<header class="topbar"><a class="brand" href="/"><img src="assets/logo.svg" alt="" width="44" height="44"><span>GLOVTA<small>Global Knowledge &amp; Talent Accelerator</small></span></a><span class="product-name">Espacio profesional</span><button class="quiet" id="logout" hidden>Cerrar sesión</button></header>
+<main id="main">
+<div class="page-heading" id="profile-heading" hidden><h1 id="view-heading">Mi espacio</h1></div>
+<p id="status" role="status" aria-live="polite"></p>
+<div id="access-layout" class="access-layout">
+<section class="access-story" aria-labelledby="welcome-title">
+<p class="eyebrow">GLOVTA / ESPACIO PROFESIONAL</p>
+<h1 id="welcome-title">Tu experiencia tiene<br>algo para aportar.</h1>
+<p>Un lugar para ordenar lo que sabés hacer y preparar tu próxima postulación.</p>
+<ol class="access-steps">
+<li><strong>Presentate con tus palabras</strong><span>Tu recorrido también incluye estudios, proyectos y aprendizajes.</span></li>
+<li><strong>Construí tu Career Passport</strong><span>Reuní tu presentación profesional en una vista que podés editar.</span></li>
+<li><strong>Seguí tus postulaciones</strong><span>Consultá las oportunidades publicadas y el estado de tus solicitudes.</span></li>
+</ol>
+<a href="/">Explorar Glovta →</a>
+</section>
+<form id="login" class="login-card"><p class="eyebrow">ACCESO A TU CUENTA</p><h2>Bienvenido a Glovta</h2><p>Accedé a tu espacio profesional y continuá desarrollando tu talento.</p>
+<label>Correo electrónico<input name="email" type="email" autocomplete="username" maxlength="254" required></label>
+<label for="access-password">Contraseña</label><div class="password-field"><input id="access-password" name="password" type="password" autocomplete="current-password" maxlength="1024" required><button type="button" id="toggle-password" class="quiet" aria-controls="access-password" aria-pressed="false">Mostrar</button></div><button type="submit">Ingresar</button><button class="quiet" id="access-mode" type="button">Crear una cuenta</button><details><summary>Cómo se guarda tu perfil</summary><p>Los datos se guardan en la base de Glovta asociados a tu cuenta. Podés editar tu presentación después de ingresar. La sesión de esta versión termina al recargar o cerrar la página.</p></details></form></div>
+<section id="workspace" hidden>
+<nav class="section-nav" aria-label="Mi espacio"><a href="#overview">Mi espacio</a><a href="#profile">Mi perfil</a><a href="#passport">Career Passport</a><a href="#jobs-section">Oportunidades</a></nav>
+<div id="overview" class="overview-grid">
+<section class="panel overview-intro"><p class="eyebrow">RESUMEN PROFESIONAL</p><h2 id="overview-name"></h2><p id="overview-title"></p><a href="#passport">Abrir mi Passport</a></section>
+<section class="panel"><p class="eyebrow">PRESENTACIÓN INICIAL</p><h2 id="completion-label">0 % completo</h2><progress id="completion" value="0" max="100" aria-labelledby="completion-label"></progress><p>Nombre, titular, ubicación y resumen. Cada dato suma un cuarto de la presentación.</p><p id="next-step"></p><a href="#profile">Completar presentación</a></section>
+<section class="panel"><p class="eyebrow">PERFIL PROFESIONAL</p><h2 id="total-label">Calculando…</h2><progress id="total-progress" max="8" aria-labelledby="total-label"></progress><p>Ocho datos con el mismo peso: los cuatro de presentación, objetivo, trayectoria, idiomas y habilidades. Para trayectoria cuenta tanto la formación como un proyecto, voluntariado o empleo.</p><p id="total-next"></p><a id="total-action" href="#passport">Ver Career Passport</a></section></div>
+<section id="passport" aria-labelledby="passport-heading">
+<div class="passport-cover">
+<div class="passport-mast"><div class="passport-brand"><img src="assets/logo.svg" alt="" width="40" height="40"><strong>GLOVTA</strong></div><h2 id="passport-heading" lang="en">Career Passport</h2></div>
+<div class="passport-summary"><div class="passport-identity"><h3 id="preview-name">Tu nombre</h3><p id="preview-headline"></p><p id="preview-location"></p><p id="preview-bio"></p></div>
+<div class="passport-goal" id="goal-block" hidden><p class="eyebrow">OBJETIVO PROFESIONAL</p><p id="goal-value"></p></div></div>
+<div class="passport-actions"><a href="#profile">Editar presentación</a><a href="#jobs-section">Explorar oportunidades</a><button type="button" id="print-passport">Imprimir o guardar PDF</button></div>
+</div>
+<div id="passport-sections" aria-label="Trayectoria guardada"></div>
+</section><div class="profile-layout">
+<div class="editor">
+<nav id="edit-nav" class="subnav" aria-label="Secciones de mi perfil"><a href="#profile">Presentación</a><a href="#section-experiences">Experiencia</a><a href="#section-education">Formación</a><a href="#section-languages">Idiomas</a><a href="#section-skills">Habilidades</a><a href="#preferences">Preferencias</a></nav>
+<nav id="jobs-nav" class="subnav" aria-label="Empleo"><a href="#jobs-section">Buscar oportunidades</a><a href="#applications-section">Mis postulaciones</a></nav>
+<form id="profile" class="panel">
+<div class="section-heading"><div><p class="eyebrow">01 / PRESENTACIÓN</p><h2>Contá quién sos</h2></div><span class="tag">Solo vos podés editarlo</span></div>
+<p class="help">Podés incluir proyectos de estudio, trabajo independiente o voluntariado. Tu experiencia puede empezar por ahí.</p>
+<div class="field-grid">
+<label>Nombre completo <span class="required">(obligatorio)</span><input name="full_name" maxlength="150" autocomplete="name" required></label>
+<label>Titular profesional<input name="headline" maxlength="200" aria-describedby="headline-help"><small id="headline-help">Tu especialidad o el área en la que querés desarrollarte.</small></label>
+</div>
+<label>Ubicación general<input name="location" maxlength="150" autocomplete="address-level2" aria-describedby="location-help"><small id="location-help">Ciudad y país son suficientes.</small></label>
+<label>Acerca de mí<textarea name="bio" maxlength="3000" rows="6" aria-describedby="bio-help"></textarea><small id="bio-help">Qué sabés hacer, qué aprendiste y qué te gustaría aportar.</small></label>
+<details id="preferences" class="preferences">
+<summary>Objetivo y preferencias laborales</summary>
+<p class="help">Contá qué buscás. Podés cambiar estas preferencias cuando lo necesites.</p>
+<label>Objetivo laboral<textarea name="career_goal" maxlength="1000" rows="3"></textarea></label>
+<div class="field-grid">
+<label>Modalidad<select name="work_mode"><option value="">Elegir modalidad</option><option value="remote">Remota</option><option value="hybrid">Híbrida</option><option value="onsite">Presencial</option><option value="flexible">Sin preferencia</option></select></label>
+<label>Jornada<select name="work_schedule"><option value="">Elegir jornada</option><option value="full_time">Tiempo completo</option><option value="part_time">Tiempo parcial</option><option value="flexible">Flexible</option></select></label>
+</div>
+<label>Sectores de interés<input name="sectors" maxlength="500" aria-describedby="sectors-help"><small id="sectors-help">Por ejemplo, tecnología, educación o servicios.</small></label>
+<label>Tipos de oportunidades<input name="opportunity_types" maxlength="500" aria-describedby="opportunities-help"><small id="opportunities-help">Por ejemplo, primer empleo, pasantía o trabajo independiente.</small></label>
+</details>
+<div class="save-bar"><span id="save-state">Los cambios se guardan al confirmar.</span><button>Guardar perfil</button></div>
+</form>
+<div id="professional-sections"></div><section class="panel" id="jobs-section"><div class="section-heading"><div><p class="eyebrow">02 / EXPLORAR</p><h2>Oportunidades laborales</h2></div><button class="quiet" id="reload">Actualizar oportunidades y postulaciones</button></div><label>Buscar por puesto, empresa o ubicación<input type="search" id="job-search"></label><p id="search-empty" hidden>Probá con otro puesto, empresa o ciudad.</p><div id="opportunities"></div><a href="#passport">Revisar mi Career Passport</a></section>
+<section class="panel" id="applications-section"><p class="eyebrow">03 / SEGUIMIENTO</p><h2>Mis postulaciones</h2><div id="applications"></div></section>
+<section class="panel" id="employer-panel" hidden aria-labelledby="employer-title">
+<h2 id="employer-title">Gestión de empresa</h2><p id="employer-name"></p>
+<details><summary>Publicar una oportunidad</summary><form id="employer-offer">
+<label>Puesto<input name="title" required maxlength="200"></label>
+<label>Ubicación de la oferta<input name="location" maxlength="200"></label>
+<label>Descripción de la oferta<textarea name="description" required maxlength="10000"></textarea></label>
+<button>Publicar oportunidad</button></form></details>
+<h3>Postulaciones recibidas</h3><div id="employer-inbox"></div>
+</section>
+</div>
+</div></section>
+</main><footer>GLOVTA · Empleabilidad, formación y desarrollo profesional.</footer></body></html>
+
+
+
